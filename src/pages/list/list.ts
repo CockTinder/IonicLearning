@@ -56,11 +56,35 @@ export class ListPage {
           text: 'Save',
           handler: data => {
             console.log('Saved clicked');
+            console.log(data)
+            this.showConfirm(name)
           }
         }
       ]
     });
     prompt.present();
+  }
+
+  showConfirm(data: string) {
+    let confirm = this.alertCtrl.create({
+      title: 'Use this lightsaber? ' + data,
+      message: 'Do you agree to use this lightsaber to do good across the intergalactic galaxy?',
+      buttons: [
+        {
+          text: 'Disagree',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Agree',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 }
 
