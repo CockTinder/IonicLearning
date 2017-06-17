@@ -60,7 +60,6 @@ export class ListPage {
         }
       ]
     });
-    console.log("test")
     prompt.present();
   }
 }
